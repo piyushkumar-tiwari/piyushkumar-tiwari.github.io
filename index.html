@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Piyush Kumar Tiwari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #202124;
+      background: #fff;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 2.5rem;
+      height: 52px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .nav-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #202124;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      color: #5f6368;
+      text-decoration: none;
+      padding: 0 1rem;
+      height: 52px;
+      display: flex; align-items: center;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-links a:hover { color: #1a73e8; border-bottom-color: #1a73e8; }
+
+    /* MAIN LAYOUT */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 2rem 4rem;
+    }
+
+    /* HERO / INTRO */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .intro-text h1 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #202124;
+    }
+    .intro-text .affil {
+      font-size: 13px;
+      color: #5f6368;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+    .intro-text p {
+      font-size: 14px;
+      color: #3c4043;
+      margin-bottom: 0.8rem;
+      max-width: 55ch;
+    }
+    .intro-photo {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f1f3f4;
+      border: 1px solid #e0e0e0;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #9aa0a6; font-size: 12px; text-align: center; padding: 1rem;
+    }
+    .intro-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .links-row {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;
+    }
+    .links-row a {
+      font-size: 13px;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .links-row a:hover { text-decoration: underline; }
+    .links-row span { color: #e0e0e0; }
+
+    /* SECTIONS */
+    section { padding: 2.5rem 0; border-bottom: 1px solid #e0e0e0; }
+    section:last-child { border-bottom: none; }
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #202124;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.4rem;
+    }
+
+    /* RESEARCH INTERESTS */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      font-size: 12px;
+      color: #3c4043;
+      background: #f1f3f4;
+      border: 1px solid #e0e0e0;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+    }
+
+    /* BLOGS */
+    .blog-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .blog-item { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; }
+    .blog-date { font-size: 12px; color: #9aa0a6; padding-top: 2px; }
+    .blog-title { font-size: 14px; font-weight: 500; color: #202124; margin-bottom: 0.2rem; }
+    .blog-title a { color: #202124; text-decoration: none; }
+    .blog-title a:hover { color: #1a73e8; }
+    .blog-desc { font-size: 13px; color: #5f6368; }
+    .blog-link { font-size: 12px; color: #1a73e8; text-decoration: none; }
+    .blog-link:hover { text-decoration: underline; }
+
+    /* ABOUT */
+    .about-text p { font-size: 14px; color: #3c4043; margin-bottom: 0.7rem; max-width: 62ch; }
+
+    /* CONTACT */
+    .contact-text { font-size: 14px; color: #3c4043; }
+    .contact-text a { color: #1a73e8; text-decoration: none; }
+    .contact-text a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      max-width: 860px; margin: 0 auto;
+      padding: 1.2rem 2rem;
+      font-size: 12px; color: #9aa0a6;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 600px) {
+      .intro { grid-template-columns: 1fr; }
+      .intro-photo { width: 100px; height: 100px; }
+      nav { padding: 0 1rem; }
+      .nav-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Piyush Kumar Tiwari</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- INTRO -->
+  <div class="intro" id="home">
+    <div class="intro-text">
+      <h1>Piyush Kumar Tiwari</h1>
+      <div class="affil">
+        MS by Research · Robotics Research Centre (RRC)<br>
+        IIIT Hyderabad · Advised by Dr. Harikumar Kandath &amp; Dr. Tejas Bodas
+      </div>
+      <p>
+        I'm trying to understand how learning systems learn and why they sometimes don't.
+        My work focuses on Reinforcement Learning and non-convex optimization.
+      </p>
+      <p>
+        I like the mathematics of RL, optimization, analysis, and probability.
+      </p>
+      <div class="links-row">
+        <a href="/cdn-cgi/l/email-protection#087861717d7b60486d70696578646d266b6765">Email</a>
+        <span>·</span>
+        <a href="#">CV</a>
+        <span>·</span>
+        <a href="#">Google Scholar</a>
+        <span>·</span>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+    <div class="intro-photo">
+      <!-- Replace with: <img src="photo.jpg" alt="Piyush Kumar Tiwari"> -->
+      Your photo here
+    </div>
+  </div>
+
+  <!-- RESEARCH INTERESTS -->
+  <section id="research">
+    <h2>Research Interests</h2>
+    <div class="tags">
+      <span class="tag">Reinforcement Learning</span>
+      <span class="tag">Non-convex Optimization</span>
+      <span class="tag">Mathematical Analysis</span>
+      <span class="tag">Probability Theory</span>
+      <span class="tag">Robotics</span>
+    </div>
+  </section>
+
+  <!-- BLOGS -->
+  <section id="blogs">
+    <h2>Blogs</h2>
+    <div class="blog-list">
+      <div class="blog-item">
+        <span class="blog-date">Month YYYY</span>
+        <div>
+          <div class="blog-title"><a href="#">Your Medium Article Title Here</a></div>
+          <div class="blog-desc">A short one-line description of what the article is about.</div>
+        </div>
+      </div>
+      <div class="blog-item">
+        <span class="blog-date">Month YYYY</span>
+        <div>
+          <div class="blog-title"><a href="#">Another Article Title</a></div>
+          <div class="blog-desc">A short one-line description of what the article is about.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>
+        I am an MS by Research student at the Robotics Research Centre, IIIT Hyderabad,
+        working under Dr. Harikumar Kandath and Dr. Tejas Bodas.
+      </p>
+      <p>
+        In my free time, I enjoy watching Manchester United, following Alexander Volkanovski,
+        cooking, travelling, and catching up with friends.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-text">
+      Feel free to reach out for collaborations or to discuss ideas —
+      <a href="/cdn-cgi/l/email-protection#53233a2a26203b13362b323e233f367d303c3e"><span class="__cf_email__" data-cfemail="04746d7d71776c44617c65697468612a6
