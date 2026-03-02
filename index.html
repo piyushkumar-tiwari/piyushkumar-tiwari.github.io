@@ -4,158 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Piyush Kumar Tiwari</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-size: 15px;
-      line-height: 1.65;
-      color: #202124;
-      background: #fff;
+    :root {
+      --bg: #faf9f7; --fg: #1a1a1a; --muted: #6b6b6b;
+      --border: #e5e2dc; --accent: #2d5be3; --card: #fff;
     }
-
-    /* NAV */
+    body { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.7; color: var(--fg); background: var(--bg); }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0 2.5rem;
-      height: 52px;
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
+      padding: 0 3rem; height: 56px;
+      background: rgba(250,249,247,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
-    .nav-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: #202124;
-      letter-spacing: 0.01em;
-    }
-    .nav-links { display: flex; gap: 0; list-style: none; }
+    .nav-name { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--fg); }
+    .nav-links { display: flex; list-style: none; }
     .nav-links a {
-      font-size: 13px;
-      color: #5f6368;
-      text-decoration: none;
-      padding: 0 1rem;
-      height: 52px;
-      display: flex; align-items: center;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
+      font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none;
+      padding: 0 1.1rem; height: 56px; display: flex; align-items: center;
+      border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s;
     }
-    .nav-links a:hover { color: #1a73e8; border-bottom-color: #1a73e8; }
-
-    /* MAIN LAYOUT */
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 80px 2rem 4rem;
-    }
-
-    /* HERO / INTRO */
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: start;
-      padding: 3rem 0 2.5rem;
-      border-bottom: 1px solid #e0e0e0;
-    }
-    .intro-text h1 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
-      color: #202124;
-    }
-    .intro-text .affil {
-      font-size: 13px;
-      color: #5f6368;
-      margin-bottom: 1.2rem;
-      font-weight: 400;
-    }
-    .intro-text p {
-      font-size: 14px;
-      color: #3c4043;
-      margin-bottom: 0.8rem;
-      max-width: 55ch;
-    }
+    .nav-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    main { max-width: 880px; margin: 0 auto; padding: 96px 2.5rem 5rem; }
+    .intro { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: start; padding: 3.5rem 0 3rem; }
+    .intro-text h1 { font-family: 'DM Serif Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.2; }
+    .intro-text .affil { font-size: 12.5px; color: var(--muted); margin-bottom: 1.6rem; }
+    .intro-text p { font-size: 14.5px; color: #3a3a3a; margin-bottom: 1rem; max-width: 56ch; line-height: 1.75; }
     .intro-photo {
-      width: 160px; height: 160px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #f1f3f4;
-      border: 1px solid #e0e0e0;
-      flex-shrink: 0;
+      width: 260px; height: 260px; border-radius: 6px; overflow: hidden;
+      background: #e8e5df; border: 1px solid var(--border); flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      color: #9aa0a6; font-size: 12px; text-align: center; padding: 1rem;
+      color: var(--muted); font-size: 12px; text-align: center; padding: 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
     .intro-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-    .links-row {
-      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;
-    }
+    .links-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.4rem; }
     .links-row a {
-      font-size: 13px;
-      color: #1a73e8;
-      text-decoration: none;
+      font-size: 12.5px; font-weight: 500; color: var(--accent); text-decoration: none;
+      padding: 0.35rem 0.85rem; border: 1px solid var(--accent); border-radius: 3px;
+      transition: background 0.15s, color 0.15s;
     }
-    .links-row a:hover { text-decoration: underline; }
-    .links-row span { color: #e0e0e0; }
-
-    /* SECTIONS */
-    section { padding: 2.5rem 0; border-bottom: 1px solid #e0e0e0; }
-    section:last-child { border-bottom: none; }
-    h2 {
-      font-size: 14px;
-      font-weight: 500;
-      color: #202124;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1.4rem;
-    }
-
-    /* RESEARCH INTERESTS */
+    .links-row a:hover { background: var(--accent); color: #fff; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+    .research-strip { padding: 2.2rem 0 0; }
+    .research-strip h2 { font-size: 11px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      font-size: 12px;
-      color: #3c4043;
-      background: #f1f3f4;
-      border: 1px solid #e0e0e0;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-    }
-
-    /* BLOGS */
-    .blog-list { display: flex; flex-direction: column; gap: 1.2rem; }
-    .blog-item { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; }
-    .blog-date { font-size: 12px; color: #9aa0a6; padding-top: 2px; }
-    .blog-title { font-size: 14px; font-weight: 500; color: #202124; margin-bottom: 0.2rem; }
-    .blog-title a { color: #202124; text-decoration: none; }
-    .blog-title a:hover { color: #1a73e8; }
-    .blog-desc { font-size: 13px; color: #5f6368; }
-    .blog-link { font-size: 12px; color: #1a73e8; text-decoration: none; }
-    .blog-link:hover { text-decoration: underline; }
-
-    /* ABOUT */
-    .about-text p { font-size: 14px; color: #3c4043; margin-bottom: 0.7rem; max-width: 62ch; }
-
-    /* CONTACT */
-    .contact-text { font-size: 14px; color: #3c4043; }
-    .contact-text a { color: #1a73e8; text-decoration: none; }
+    .tag { font-size: 12.5px; color: #3a3a3a; background: var(--card); border: 1px solid var(--border); padding: 0.3rem 0.8rem; border-radius: 3px; }
+    .page { display: none; padding: 2.5rem 0; }
+    .page.active { display: block; }
+    .homepage.hidden { display: none; }
+    .page h2 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--fg); margin-bottom: 2rem; }
+    .about-text p { font-size: 14.5px; color: #3a3a3a; margin-bottom: 1rem; max-width: 62ch; line-height: 1.8; }
+    .research-grid { display: flex; flex-direction: column; gap: 1.6rem; }
+    .research-item { padding: 1.4rem 1.6rem; background: var(--card); border: 1px solid var(--border); border-radius: 4px; }
+    .research-item h3 { font-size: 14.5px; font-weight: 500; margin-bottom: 0.4rem; }
+    .research-item p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .all-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .blog-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .blog-item { display: grid; grid-template-columns: 68px 1fr; gap: 1rem; padding: 1.2rem 1.4rem; background: var(--card); border: 1px solid var(--border); border-radius: 4px; }
+    .blog-date { font-size: 11.5px; color: #9aa0a6; padding-top: 3px; line-height: 1.4; }
+    .blog-title { font-size: 14px; font-weight: 500; color: var(--fg); margin-bottom: 0.25rem; }
+    .blog-title a { color: var(--fg); text-decoration: none; }
+    .blog-title a:hover { color: var(--accent); }
+    .blog-desc { font-size: 13px; color: var(--muted); }
+    .contact-text { font-size: 14.5px; color: #3a3a3a; max-width: 55ch; line-height: 1.8; }
+    .contact-text a { color: var(--accent); text-decoration: none; }
     .contact-text a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer {
-      max-width: 860px; margin: 0 auto;
-      padding: 1.2rem 2rem;
-      font-size: 12px; color: #9aa0a6;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    @media (max-width: 600px) {
-      .intro { grid-template-columns: 1fr; }
-      .intro-photo { width: 100px; height: 100px; }
-      nav { padding: 0 1rem; }
+    footer { max-width: 880px; margin: 0 auto; padding: 1.2rem 2.5rem; font-size: 12px; color: #bbb; border-top: 1px solid var(--border); }
+    @media (max-width: 640px) {
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .intro-photo { width: 140px; height: 140px; }
+      nav { padding: 0 1.2rem; }
       .nav-name { display: none; }
+      main { padding: 80px 1.2rem 3rem; }
     }
   </style>
 </head>
@@ -164,60 +87,90 @@
 <nav>
   <span class="nav-name">Piyush Kumar Tiwari</span>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#blogs">Blogs</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+    <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+    <li><a href="#" onclick="showPage('research'); return false;">Research</a></li>
+    <li><a href="#" onclick="showPage('blogs'); return false;">Blogs</a></li>
+    <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
   </ul>
 </nav>
 
 <main>
 
-  <!-- INTRO -->
-  <div class="intro" id="home">
-    <div class="intro-text">
-      <h1>Piyush Kumar Tiwari</h1>
-      <div class="affil">
-        MS by Research · Robotics Research Centre (RRC)<br>
-        IIIT Hyderabad · Advised by Dr. Harikumar Kandath &amp; Dr. Tejas Bodas
+  <!-- HOMEPAGE -->
+  <div class="homepage" id="page-home">
+    <div class="intro">
+      <div class="intro-text">
+        <h1>Piyush Kumar Tiwari</h1>
+        <div class="affil">MS by Research · Robotics Research Centre (RRC) · IIIT Hyderabad</div>
+        <p>Hi, my name is Piyush, currently a MS by Research student at IIIT Hyderabad at the Robotics Research Centre (RRC) lab, under Dr. Harikumar Kandath and Dr. Tejas Bodas.</p>
+        <p>I'm currently trying to understand how learning systems learn and why they sometimes don't; working on Reinforcement Learning and non-convex optimization. I like the mathematics of topics like RL, optimization, analysis and probability.</p>
+        <p>In my free time, I love watching and supporting Manchester United and Alexander Volkanovski. I also enjoy cooking, gossiping with my friends and travelling.</p>
+        <p>If you'd like to collaborate or just discuss ideas, feel free to reach out!</p>
+        <div class="links-row">
+          <a href="mailto:piyush.tiwari@research.iiit.ac.in">Email</a>
+          <a href="resume.pdf" target="_blank">CV</a>
+          <a href="https://www.linkedin.com/in/piyush-kumar-tiwari-233101207/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/piyushkumar-tiwari" target="_blank">GitHub</a>
+        </div>
       </div>
-      <p>
-        I'm trying to understand how learning systems learn and why they sometimes don't.
-        My work focuses on Reinforcement Learning and non-convex optimization.
-      </p>
-      <p>
-        I like the mathematics of RL, optimization, analysis, and probability.
-      </p>
-      <div class="links-row">
-        <a href="/cdn-cgi/l/email-protection#087861717d7b60486d70696578646d266b6765">Email</a>
-        <span>·</span>
-        <a href="#">CV</a>
-        <span>·</span>
-        <a href="#">Google Scholar</a>
-        <span>·</span>
-        <a href="#">GitHub</a>
+      <div class="intro-photo">
+        <!-- Replace with: <img src="photo.jpg" alt="Piyush Kumar Tiwari"> -->
+        Your photo here
       </div>
     </div>
-    <div class="intro-photo">
-      <!-- Replace with: <img src="photo.jpg" alt="Piyush Kumar Tiwari"> -->
-      Your photo here
+    <hr class="divider"/>
+    <div class="research-strip">
+      <h2>Research Interests</h2>
+      <div class="tags">
+        <span class="tag">Reinforcement Learning</span>
+        <span class="tag">Non-convex Optimization</span>
+        <span class="tag">Mathematical Analysis</span>
+        <span class="tag">Probability Theory</span>
+        <span class="tag">Robotics</span>
+      </div>
     </div>
   </div>
 
-  <!-- RESEARCH INTERESTS -->
-  <section id="research">
-    <h2>Research Interests</h2>
-    <div class="tags">
+  <!-- ABOUT PAGE -->
+  <div class="page" id="page-about">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>I am an MS by Research student at the Robotics Research Centre, IIIT Hyderabad, working under Dr. Harikumar Kandath and Dr. Tejas Bodas.</p>
+      <p>My research focuses on the theoretical underpinnings of reinforcement learning and non-convex optimization. I am particularly drawn to the mathematics that governs how learning systems converge — and the fascinating cases where they don't.</p>
+      <p>I have a deep appreciation for mathematical analysis and probability theory as tools for understanding complex learning phenomena.</p>
+      <p>Outside of research, I love watching and supporting Manchester United and following Alexander Volkanovski's journey in MMA. I also enjoy cooking new dishes, travelling to new places, and long conversations with friends.</p>
+    </div>
+  </div>
+
+  <!-- RESEARCH PAGE -->
+  <div class="page" id="page-research">
+    <h2>Research</h2>
+    <div class="all-tags">
       <span class="tag">Reinforcement Learning</span>
       <span class="tag">Non-convex Optimization</span>
       <span class="tag">Mathematical Analysis</span>
       <span class="tag">Probability Theory</span>
       <span class="tag">Robotics</span>
     </div>
-  </section>
+    <div class="research-grid">
+      <div class="research-item">
+        <h3>Reinforcement Learning &amp; Non-convex Optimization</h3>
+        <p>My primary research investigates the theoretical properties of RL algorithms in non-convex settings — characterizing convergence behaviour, sample complexity, and conditions under which policy gradient methods succeed or fail.</p>
+      </div>
+      <div class="research-item">
+        <h3>Mathematical Foundations of Learning</h3>
+        <p>I care deeply about the mathematics behind learning systems — from measure-theoretic probability to functional analysis — and how these tools give principled insights into algorithm design and failure modes.</p>
+      </div>
+      <div class="research-item">
+        <h3>Robotics Applications</h3>
+        <p>My work is situated within the Robotics Research Centre, where RL algorithms are developed and tested in robotic control settings, bridging theory with real-world physical systems.</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- BLOGS -->
-  <section id="blogs">
+  <!-- BLOGS PAGE -->
+  <div class="page" id="page-blogs">
     <h2>Blogs</h2>
     <div class="blog-list">
       <div class="blog-item">
@@ -235,26 +188,33 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-text">
-      <p>
-        I am an MS by Research student at the Robotics Research Centre, IIIT Hyderabad,
-        working under Dr. Harikumar Kandath and Dr. Tejas Bodas.
-      </p>
-      <p>
-        In my free time, I enjoy watching Manchester United, following Alexander Volkanovski,
-        cooking, travelling, and catching up with friends.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
+  <!-- CONTACT PAGE -->
+  <div class="page" id="page-contact">
     <h2>Contact</h2>
     <div class="contact-text">
-      Feel free to reach out for collaborations or to discuss ideas —
-      <a href="/cdn-cgi/l/email-protection#53233a2a26203b13362b323e233f367d303c3e"><span class="__cf_email__" data-cfemail="04746d7d71776c44617c65697468612a6
+      <p style="margin-bottom:1.4rem;">Feel free to reach out for collaborations, research discussions, or just to say hello. I'm always happy to connect with people working on interesting problems.</p>
+      <p>📧 <a href="mailto:piyush.tiwari@research.iiit.ac.in">piyush.tiwari@research.iiit.ac.in</a></p>
+      <p style="margin-top:0.7rem;">💼 <a href="https://www.linkedin.com/in/piyush-kumar-tiwari-233101207/" target="_blank">LinkedIn</a></p>
+      <p style="margin-top:0.7rem;">💻 <a href="https://github.com/piyushkumar-tiwari" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+
+</main>
+
+<footer>© 2025 Piyush Kumar Tiwari · IIIT Hyderabad</footer>
+
+<script>
+  function showPage(name) {
+    document.getElementById('page-home').classList.toggle('hidden', name !== 'home');
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    if (name !== 'home') {
+      const t = document.getElementById('page-' + name);
+      if (t) t.classList.add('active');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
